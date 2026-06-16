@@ -1,0 +1,82 @@
+/*CREANDO VARIABLES PARA COLORES*/
+:root {
+    --negro-casaPapel: #000000;
+    --oscuro: #212529;
+    --claro: #f8f9fa;
+    --rojo: #fc0000;
+    --rojoClaro-: #ee6464;
+}
+
+/*DANDO ESTILO A LAS OPCIONES DEL MENU*/
+nav a {
+    color: var(--oscuro);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: 4px;
+    transition: all 0.3s ease;  
+}
+
+/*HOVER ES CUANDO COLOCAMOS EL MAUSE SOBRE UN ELEMENTO*/
+nav a:hover {
+    background-color: var(--rojoClaro-);
+    color: var(--oscuro);
+}
+
+/*AGREGAR ESTILOS A LAS ETIQUETAS H1, H2 Y h3*/
+h1, h2, h3 {
+    color: var(--negro-casaPapel);
+    font-weight: bold;
+}
+
+/*ESTILOS DEL HEADER DE LA WIKI*/
+.header-wiki {
+    background-color: var(--rojo);
+    padding: 40px 20px;
+    border-bottom: 5px solid var(--negro-casaPapel);
+    border-radius: 15px 15px 15px 15px;
+    margin-bottom: 30px;
+}
+
+/*OTRO ESTILO DEL HEADER DE LA WIKI*/
+.header1-wiki {
+    background-color: var(--negro-casaPapel);
+    padding: 40px 20px;
+    color: var(--rojo);
+    border-bottom: 5px solid var(--rojo);
+    border-radius: 15px 15px 15px 15px;
+    margin-bottom: 30px;
+}
+
+/* ESTILOS DE LA IMAGEN DEL INDEX*/
+.img-simpson {
+    border: 4px solid white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);/* SOMBRA*/
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.img-simpson:hover {
+    transform: scale(1.03); /*EFECTO SUTIL AL PASAR EL MAOUSE*/
+}
+
+/* Este contenedor es el que se encarga de poner los elementos alineados */
+.seccion-mixta {
+    display: flex;            /* Activa el modo Flexbox */
+    align-items: center;      /* Alinea el texto y el video verticalmente al centro */
+    gap: 40px;                 /* Crea el espacio de separación entre el texto y el video */
+}
+
+/* Fuerza a que tanto la información como el video compartan el espacio equitativamente */
+.columna-texto, 
+.columna-video {
+    flex: 1;                  /* Cada columna toma el 50% del ancho disponible */
+}
+
+/* Asegura que el video no se desborde y respete el tamaño de su columna */
+.columna-video video, 
+.columna-video iframe {
+    width: 50%;
+    height: auto;             /* Mantiene la proporción correcta del video */
+}

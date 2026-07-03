@@ -132,9 +132,13 @@ nav.navbar,
     flex-wrap: wrap;
 }
 
-.columna-texto,
-.columna-video {
+.columna-texto {
     flex: 1 1 320px;
+}
+
+.columna-video {
+    flex: 0 0 360px;
+    max-width: 360px;
 }
 
 .columna-video video,
@@ -142,6 +146,7 @@ nav.navbar,
 .columna-video .contenido-card {
     width: 100%;
     height: auto;
+    max-height: 240px;
 }
 
 .img-simpson {

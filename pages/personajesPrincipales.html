@@ -1,57 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head align="center">
-       <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <title>PERSONAJES PRINCIPALES</title>
-   </head>
-   <BODY style="background-color: rgb(91, 240, 227)">
-      <nav>
-         <a href="index.html">Regresar</a>
-      </nav>
-     <div align="center">
-          <header>
-               <h2>Personajes principales</h2>
-         </header>
-            <p>Seleccione una opcion para conocer mas de cada uno de ellos</p>
-            <table border="1" align="center">
-                 <tr>
-                    <td colspan="2" align="center">
-                        <h3>Personajes</h3>
-                    </td>
-                </tr>
-                <tr>
-                    <!--TH ES ETIQUETA PARA EL ENCABEZADO DE COLUMNA-->
-                   <th>
-                       Nombre
-                   </th>
-                </tr>
-                <tr>
-                    <td align="center">
-                       <a href="elProfesor.html">El Profesor</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center">
-                      <a href="tokio.html">Tokio</a>
-                    </td>
-                </tr> 
-                <tr>
-                    <td align="center">
-                       <a href="berlin.html">Berlin</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center">
-                        <a href="nairobi.html">Nairobi</a>
-                    </td>
-                </tr>
-            </table>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personajes Principales | La Casa de Papel</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+<body class="body">
+    <nav class="menu">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">LA CASA DE PAPEL</a>
+            <div class="nav-links">
+                <a class="nav-link" href="../index.html">Inicio</a>
+                <a class="nav-link active" href="personajesPrincipales.html">Personajes</a>
+            </div>
         </div>
-      <footer>
-         <div align="center">
-             <p>Sitio desarrollado por Cecia Morales - 2026 © </p>
-         </div>
-      </footer>
-   </BODY>
+    </nav>
+
+    <main class="todo">
+        <div class="contenedor-principal">
+            <header class="header-wiki text-center">
+                <h1 class="display-4">Personajes Principales</h1>
+                <p class="lead">Conoce a los miembros más importantes del atraco.</p>
+            </header>
+        </div>
+
+        <div class="contenedor-principal">
+            <div class="card-grid">
+                <a href="elProfesor.html" class="card">
+                    <img src="../imagenes/profesor.jpg" alt="El profesor">
+                    <h3>EL PROFESOR</h3>
+                </a>
+                <a href="tokio.html" class="card">
+                    <img src="../imagenes/tokio.jpg" alt="Tokio">
+                    <h3>TOKIO</h3>
+                </a>
+                <a href="nairobi.html" class="card">
+                    <img src="../imagenes/nairobi.jpg" alt="Nairobi">
+                    <h3>NAIROBI</h3>
+                </a>
+                <a href="berlin.html" class="card">
+                    <img src="../imagenes/berlin.jpg" alt="Berlín">
+                    <h3>BERLÍN</h3>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Sitio desarrollado por Cecia Morales - 2026 ©</p>
+    </footer>
+</body>
 </html>

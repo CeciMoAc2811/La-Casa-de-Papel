@@ -1,82 +1,311 @@
-/*CREANDO VARIABLES PARA COLORES*/
 :root {
-    --negro-casaPapel: #000000;
-    --oscuro: #212529;
-    --claro: #f8f9fa;
-    --rojo: #fc0000;
-    --rojoClaro-: #ee6464;
+    --bg-dark: #090c12;
+    --surface: #121829;
+    --surface-alt: #1e2432;
+    --text-light: #f5f6fa;
+    --text-muted: #bac3d2;
+    --brand-red: #fc0000;
+    --brand-red-soft: #e05e5e;
+    --border: rgba(255, 255, 255, 0.08);
 }
 
-/*DANDO ESTILO A LAS OPCIONES DEL MENU*/
-nav a {
-    color: var(--oscuro);
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+.body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
     text-decoration: none;
-    font-weight: bold;
-    padding: 8px 16px;
-    margin: 0 5px;
-    border-radius: 4px;
-    transition: all 0.3s ease;  
 }
 
-/*HOVER ES CUANDO COLOCAMOS EL MAUSE SOBRE UN ELEMENTO*/
-nav a:hover {
-    background-color: var(--rojoClaro-);
-    color: var(--oscuro);
+nav.navbar,
+.menu {
+    background-color: var(--surface);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/*AGREGAR ESTILOS A LAS ETIQUETAS H1, H2 Y h3*/
-h1, h2, h3 {
-    color: var(--negro-casaPapel);
-    font-weight: bold;
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 1.2rem;
 }
 
-/*ESTILOS DEL HEADER DE LA WIKI*/
-.header-wiki {
-    background-color: var(--rojo);
-    padding: 40px 20px;
-    border-bottom: 5px solid var(--negro-casaPapel);
-    border-radius: 15px 15px 15px 15px;
-    margin-bottom: 30px;
+.menu .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
 }
 
-/*OTRO ESTILO DEL HEADER DE LA WIKI*/
+.navbar-brand,
+.menu .nav-link {
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+.menu .nav-link {
+    margin-right: 0;
+}
+
+.menu .nav-link:hover,
+.menu .nav-link.active {
+    color: var(--brand-red);
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.header-wiki,
 .header1-wiki {
-    background-color: var(--negro-casaPapel);
-    padding: 40px 20px;
-    color: var(--rojo);
-    border-bottom: 5px solid var(--rojo);
-    border-radius: 15px 15px 15px 15px;
+    border-radius: 18px;
     margin-bottom: 30px;
 }
 
-/* ESTILOS DE LA IMAGEN DEL INDEX*/
+.header-wiki {
+    background: linear-gradient(135deg, var(--brand-red), #c10000);
+    padding: 40px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header1-wiki {
+    background-color: var(--surface);
+    padding: 36px 24px;
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.display-4 {
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    margin-bottom: 0.5rem;
+}
+
+.lead {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+.todo {
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: calc(100vh - 112px);
+    padding: 20px 0;
+}
+
+.contenedor-principal {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.seccion-mixta {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.columna-texto,
+.columna-video {
+    flex: 1 1 320px;
+}
+
+.columna-video video,
+.columna-video iframe,
+.columna-video .contenido-card {
+    width: 100%;
+    height: auto;
+}
+
 .img-simpson {
-    border: 4px solid white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);/* SOMBRA*/
-    border-radius: 10px;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    border: 4px solid rgba(255, 255, 255, 0.18);
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
     transition: transform 0.3s ease;
 }
 
 .img-simpson:hover {
-    transform: scale(1.03); /*EFECTO SUTIL AL PASAR EL MAOUSE*/
+    transform: translateY(-4px);
 }
 
-/* Este contenedor es el que se encarga de poner los elementos alineados */
-.seccion-mixta {
-    display: flex;            /* Activa el modo Flexbox */
-    align-items: center;      /* Alinea el texto y el video verticalmente al centro */
-    gap: 40px;                 /* Crea el espacio de separación entre el texto y el video */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
 }
 
-/* Fuerza a que tanto la información como el video compartan el espacio equitativamente */
-.columna-texto, 
-.columna-video {
-    flex: 1;                  /* Cada columna toma el 50% del ancho disponible */
+.card {
+    display: block;
+    background-color: var(--brand-red);
+    padding: 1.25rem;
+    border-radius: 18px;
+    color: white;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-align: center;
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.22);
 }
 
-/* Asegura que el video no se desborde y respete el tamaño de su columna */
-.columna-video video, 
-.columna-video iframe {
-    width: 50%;
-    height: auto;             /* Mantiene la proporción correcta del video */
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 42px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 1rem;
+}
+
+.card h3,
+.columna-texto h3,
+h2 {
+    color: var(--text-light);
+    margin-top: 1.25rem;
+}
+
+p,
+ul,
+li {
+    line-height: 1.8;
+}
+
+ul {
+    padding-left: 0;
+    list-style: none;
+    margin: 1rem 0 0;
+}
+
+ul li {
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: 0.8rem;
+}
+
+ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--brand-red);
+}
+
+button,
+input[type='submit'],
+input[type='reset'],
+.btn-style {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 999px;
+    padding: 0.95rem 1.4rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+button,
+input[type='submit'] {
+    background-color: var(--brand-red);
+    color: #fff;
+}
+
+input[type='reset'],
+.btn-style {
+    background-color: var(--surface-alt);
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+button:hover,
+input[type='submit']:hover,
+input[type='reset']:hover,
+.btn-style:hover {
+    transform: translateY(-1px);
+    background-color: var(--brand-red-soft);
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 0.95rem 1rem;
+    background-color: var(--surface-alt);
+    color: var(--text-light);
+    font: inherit;
+    margin-top: 0.4rem;
+}
+
+form {
+    display: grid;
+    gap: 1rem;
+    justify-items: stretch;
+}
+
+footer.footer {
+    background-color: var(--surface);
+    color: var(--text-muted);
+    padding: 24px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    margin: 2rem 0;
+}
+
+@media (max-width: 900px) {
+    .seccion-mixta {
+        flex-direction: column;
+    }
+
+    .header-wiki,
+    .header1-wiki {
+        padding: 30px 18px;
+    }
+}
+
+@media (max-width: 640px) {
+    .card img {
+        height: 180px;
+    }
+
+    .menu .nav-link {
+        margin-right: 0.5rem;
+    }
 }
